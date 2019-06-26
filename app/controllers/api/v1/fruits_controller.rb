@@ -36,7 +36,8 @@ module API
 			end
 
 			def fruit_params
-				params.require(:fruit).permit()
+				params.require(:fruit)
+					.permit(:id, :name, :description)
 			end
 		end
 	end

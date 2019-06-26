@@ -2,14 +2,19 @@
 
 Rails.application.routes.draw do
   
+  # Administration
+  # @implemented
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-	# APP
+	
+	# Application
+	# @implemented
 	root to: 'home#index'
 
   # API
+  # @implemented
   namespace :api do
   	namespace :v1 do
-  		resources :fruits, only: [:index, :show, :update, :destroy]
+  		resources :fruits, only: [:index, :show, :create, :update, :destroy]
   	end
   end
 end

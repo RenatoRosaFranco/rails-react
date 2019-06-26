@@ -10,6 +10,7 @@ class Body extends React.Component {
 
     this.handleFormSubmit = this.handleFormSubmit.bind(this)
     this.handleDelete     = this.handleDelete.bind(this)
+    this.deleteFruit      = this.deleteFruit.bind(this)
     this.addNewFruit      = this.addNewFruit.bind(this)
   }
 
@@ -47,8 +48,15 @@ class Body extends React.Component {
       })
       .then((data) => {
         this.setState({ fruits: data['fruits'] })
-        console.log(data['fruits'])
+        console.log('Total items', data['fruits'].length)
       });
+  }
+
+  deleteFruit(id) {
+    newFruits = this.state.fruits.filter((fruit) => fruit.id !== id)
+    this.setState({
+      fruits: newFruits
+    })
   }
 
   handleDelete(id){
@@ -59,7 +67,7 @@ class Body extends React.Component {
         'Content-Type': 'application/json'
       }
     }).then((response) => { 
-        console.log('Item was deleted!')
+        this.deleteFruit(id)
       })
   }
 

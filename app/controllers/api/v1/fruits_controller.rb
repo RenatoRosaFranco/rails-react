@@ -11,7 +11,7 @@ module API
 			end
 
 			def show
-				render json: fruit, status: 200
+				render json: @fruit, status: 200
 			end
 
 			def create
@@ -20,19 +20,19 @@ module API
 			end
 
 			def update
-				fruit.update(fruit_params)
+				@fruit.update(fruit_params)
 				render json: fruit, status: 201
 			end
 
 			def destroy
-				fruit.destroy
+				@fruit.destroy
 				head :no_content
 			end
 
 			private
 
 			def set_fruit
-				fruit = Fruit.find(params[:id])
+				@fruit = Fruit.find(params[:id])
 			end
 
 			def fruit_params

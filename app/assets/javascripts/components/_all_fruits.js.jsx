@@ -1,5 +1,11 @@
 const AllFruits = (props) => {
   
+  var hasFruits = (props.fruits.length == 0) ? 
+    <div>
+     <p> None records found </p>
+    </div> 
+    : null
+    
   var fruits = props.fruits.map((fruit) => {
     return(
       <div key={fruit.id}>
@@ -14,6 +20,8 @@ const AllFruits = (props) => {
   return(
     <div>
       {fruits}
+
+      {hasFruits}
     </div>
   )
 }

@@ -4,14 +4,15 @@ module API
 	module V1
 		class FruitsController < ApplicationController 
 			before_action :set_fruit, only: [:show, :update, :destroy]
-
+			respond_to :json
+			
 			def index
 				fruits = Fruit.all
 				render json: { fruits: fruits }, status: 200
 			end
 
 			def show
-				render json: @fruit, status: 200
+				render json: { fruit: @fruit }, status: 200
 			end
 
 			def create

@@ -8,7 +8,7 @@ class Fruit extends React.Component {
 			editable: false
 		}
 
-		this.handleEdit = this.handleEdit.bind(this)
+		this.handleEdit = this.handleEdit.bind(this);
 	}
 
 	handleEdit(){

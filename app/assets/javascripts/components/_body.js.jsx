@@ -8,7 +8,6 @@ class Body extends React.Component {
       fruits: []
     };
 
-    this.handleUpdate     = this.handleUpdate.bind(this)
     this.updateFruit      = this.updateFruit.bind(this)
     this.handleFormSubmit = this.handleFormSubmit.bind(this)
     this.handleDelete     = this.handleDelete.bind(this)

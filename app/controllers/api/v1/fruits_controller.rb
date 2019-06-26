@@ -7,7 +7,7 @@ module API
 
 			def index
 				fruits = Fruit.all
-				render json: { fruits: fruits}, status: 200
+				render json: { fruits: fruits }, status: 200
 			end
 
 			def show

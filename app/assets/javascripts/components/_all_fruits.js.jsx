@@ -5,7 +5,8 @@ const AllFruits = (props) => {
       <div key={fruit.id}>
         <Fruit 
           fruit={ fruit } 
-          handleDelete={ props.handleDelete } />
+          handleDelete={ props.handleDelete }
+          handleUpdate={ props.handleUpdate } />
       </div>
     )
   });
